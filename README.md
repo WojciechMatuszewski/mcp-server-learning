@@ -33,3 +33,7 @@ TODO:
   - _Roots_ – Those define the "boundaries" of the server. For example, if your server exposes a tool that works with the file system, you could include specific directory in the "roots" so that the tool is "bounded" only to that directory.
 
   - _Transports_ – Already wrote about them above. There is the STDIO and SSE transport. As for the messages, they are formatted via [JSON-RPC 2.0](https://www.jsonrpc.org/).
+
+- I **really** like the fact that the SDK has error-handling built-in.
+
+  - I can throw an error in the server `tool` callback function, and the client SDK will handle that, and respond accordingly.

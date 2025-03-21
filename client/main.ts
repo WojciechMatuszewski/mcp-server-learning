@@ -86,9 +86,7 @@ class MCPClient {
           })
           .then((toolCallResult) => {
             const toolCallResultContent = toolCallResult.content[0].text;
-            console.log(
-              `Calling tool: ${requestedToolCall.function.name}. Result: ${toolCallResultContent}`
-            );
+            console.log(`Result: ${toolCallResultContent}`);
 
             return {
               role: "tool",
