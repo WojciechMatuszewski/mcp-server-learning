@@ -2,8 +2,6 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import express from "express";
 import { exec } from "node:child_process";
-import { writeFile } from "node:fs/promises";
-import { homedir } from "node:os";
 import { promisify } from "node:util";
 const execPromise = promisify(exec);
 
@@ -84,7 +82,7 @@ let transport: SSEServerTransport | undefined = undefined;
 
 const app = express();
 
-app.get("/sse", async (req, res) => {
+app.get("/sse", async (_req, res) => {
   transport = new SSEServerTransport("/messages", res);
   await server.connect(transport);
 });
